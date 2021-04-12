@@ -23,6 +23,23 @@ class LoginTest extends TestCase
         $response->assertSeeText('Email');
         $response->assertStatus(200);
     }
+    public function test_login_user()
+    {
+        $user = new User();
+        $user->name = 'Mr Robot';
+        $user->email = 'example@yrgo.se';
+        $user->password = Hash::make('1235678');
+        $user->save();
+
+        $response = $this
+            ->followingRedirects()
+            ->post('login', [
+                'email' => 'example@yrgo.se',
+                'password' => '1235678',
+            ]);
+
+        $response->assertSeeText('Hello, Mr Robot!');
+    }
 
     // public function test_login_user()
     // {
@@ -33,14 +50,24 @@ class LoginTest extends TestCase
 
     //     ]);
 
-    //     Auth::login($user);
-
-    //     $response = $this->actingAs($user)
-    //         ->withSession(['foo' => 'bar'])
-    //         ->get('login');
+    //     $response = $this
+    //         ->followingRedirects()
+    //         ->post('login', [
+    //             'email' => 'example@yrgo.se',
+    //             'password' => '123456',
+    //         ]);
 
     //     $response->assertSeeText('Hello, User test!');
     // }
+
+    // Auth::login($user);
+
+    // $response = $this->actingAs($user)
+    //     ->withSession(['foo' => 'bar'])
+    //     ->get('login');
+
+    // $response->assertSeeText('Hello, User test!');
+}
 
     // public function test_login_user()
     // {
@@ -67,4 +94,3 @@ class LoginTest extends TestCase
 
     //     $response->assertSeeText('Whoops! Please try to login again.');
     // }
-}

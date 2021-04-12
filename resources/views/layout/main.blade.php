@@ -11,7 +11,7 @@
 </head>
 @include('errors')
 
-<body>
+<body bg-black>
     <nav class="w-100">
         <div class="text-light bg-dark w-auto p-3">
             <div class="row">
@@ -25,6 +25,8 @@
                         <li class="list-inline-item"><a href="logout">Logout</a></li>
                         @else
                         <li class="list-inline-item"><a href="login">Login</a></li>
+                        <li class="list-inline-item"><a href="signup">Signup</a></li>
+
                         @endif
                         @if (Auth::check())
                         <li class="list-inline-item"><a href="your-list">Your List</a></li>
