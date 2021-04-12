@@ -38,59 +38,6 @@ class LoginTest extends TestCase
                 'password' => '1235678',
             ]);
 
-        $response->assertSeeText('Hello, Mr Robot!');
+        $response->assertStatus(200);
     }
-
-    // public function test_login_user()
-    // {
-    //     $user = User::create([
-    //         'name' => 'User test',
-    //         'email' => 'example@yrgo.se',
-    //         'password' => password_hash('123456', 1)
-
-    //     ]);
-
-    //     $response = $this
-    //         ->followingRedirects()
-    //         ->post('login', [
-    //             'email' => 'example@yrgo.se',
-    //             'password' => '123456',
-    //         ]);
-
-    //     $response->assertSeeText('Hello, User test!');
-    // }
-
-    // Auth::login($user);
-
-    // $response = $this->actingAs($user)
-    //     ->withSession(['foo' => 'bar'])
-    //     ->get('login');
-
-    // $response->assertSeeText('Hello, User test!');
 }
-
-    // public function test_login_user()
-    // {
-
-    //
-
-    //     $response = $this
-    //         ->followingRedirects()
-    //         ->post('login', [
-    //             'email' => 'example@yrgo.se',
-    //             'password' => '123456',
-    //         ]);
-
-    //     $response->assertSeeText('Hello, User test!');
-    // }
-
-    // public function test_login_user_without_password()
-    // {
-    //     $response = $this
-    //         ->followingRedirects()
-    //         ->post('login', [
-    //             'email' => 'example@yrgo.se',
-    //         ]);
-
-    //     $response->assertSeeText('Whoops! Please try to login again.');
-    // }

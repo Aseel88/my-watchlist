@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Response\type;
 use Tests\TestCase;
 
+
 class RegistrationTest extends TestCase
 {
     /**
@@ -17,37 +18,21 @@ class RegistrationTest extends TestCase
      *
      * @return void
      */
-    // public function test_example()
-    // {
-    //     $response = $this->get('/');
-
-    //     $response->assertStatus(200);
-    // }
+    public function test_view_register_form()
+    {
+        $response = $this->get('signup');
+        $response->assertSeeText('Email');
+        $response->assertStatus(200);
+    }
     public function test_register_user()
     {
+        $user = new User();
+        $user->name = 'Mr Robot';
+        $user->email = 'example@yrgo.se';
+        $user->password = Hash::make('1235678');
+        $user->save();
 
-        // $this->validate([
-        //     'email' => 'example@test.se',
-        //     'name' => 'userTest',
-        //     'password' => '12345678',
-        // ]);
-        // confirmed|$user = User::
-        // $this->get('/signup')
-        //     ->type('UserTest', 'name')
-        //     ->type('example@test.se', 'email')
-        //     ->type('123456789', 'password')
-        //     ->press('Create an account')
-        //     ->seePageIs('/index');
-        // ->assertSeeText('Hello, User test!')
-
+        $response = $this
+            ->assertDatabaseHas('users', ['email' => 'example@yrgo.se']);
     }
-    // public function test_register_user()
-    // {
-    // $this->get('/signup')
-    // ->type('UserTest', 'name')
-    // ->type('example@test', 'email')
-    // ->type('123456789', 'password')
-    // ->press('Create an account');
-    // ->seePageIs('/index');
-    // }
 }

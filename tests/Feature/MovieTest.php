@@ -16,7 +16,15 @@ class MovieTest extends TestCase
     public function test_Movie()
     {
         $response = $this->get('/');
-
         $response->assertStatus(200);
+    }
+
+    public function test_index_Movie()
+    {
+        // $this->json('GET', 'api/index', ['Accept' => 'application/json'])
+        //     ->assertStatus(404)
+        //     ->assertJson([
+        //         "message" => "The given data was invalid."
+        //     ]);
     }
 }
