@@ -3,7 +3,7 @@
 @section('content')
 
 @include('errors')
-
+{{-- {{ route('helper.update', $helper->id) }} --}}
 
 <div class="">
     <div class="popular-movies">
