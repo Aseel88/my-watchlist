@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController1 extends Controller
 {
+
     public function __construct()
     {
         $this->middleware(['guest']);
@@ -25,7 +26,6 @@ class LoginController1 extends Controller
 
         dd($credentials);
         if (Auth::attempt($credentials)) {
-
             $request->session()->regenerate();
             return redirect()->intended('/');
         }

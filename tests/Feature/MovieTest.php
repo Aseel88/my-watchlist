@@ -10,18 +10,19 @@ use Tests\TestCase;
 
 class MovieTest extends TestCase
 {
+
     /**
      * A basic feature test example.
      *
      * @return void
      */
-    public function test_Movie()
+    public function testMovie()
     {
         $response = $this->get('/');
         $response->assertStatus(200);
     }
 
-    public function test_index_Movie()
+    public function testIndexMovie()
     {
         $response = $this->get(route('index'));
 

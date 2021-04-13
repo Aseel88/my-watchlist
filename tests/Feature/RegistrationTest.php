@@ -10,21 +10,21 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Response\type;
 use Tests\TestCase;
 
-
 class RegistrationTest extends TestCase
 {
+
     /**
      * A basic feature test example.
      *
      * @return void
      */
-    public function test_view_register_form()
+    public function testViewRegisterForm()
     {
         $response = $this->get('signup');
         $response->assertSeeText('Email');
         $response->assertStatus(200);
     }
-    public function test_register_user()
+    public function testRegisterUser()
     {
         $user = new User();
         $user->name = 'Mr Robot';

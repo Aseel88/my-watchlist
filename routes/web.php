@@ -4,11 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegistrationController;
-<<<<<<< HEAD
 use App\Http\Controllers\LoginController1;
-
-=======
->>>>>>> d90808a55cd44c227d7e3540b2eb376a342a1083
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\MoviesController;
 

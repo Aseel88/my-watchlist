@@ -12,18 +12,19 @@ use Tests\TestCase;
 class LoginTest extends TestCase
 {
     use RefreshDatabase;
+
     /**
      * A basic feature test example.
      *
      * @return void
      */
-    public function test_view_login_form()
+    public function testViewLoginForm()
     {
         $response = $this->get('login');
         $response->assertSeeText('Email');
         $response->assertStatus(200);
     }
-    public function test_login_user()
+    public function testLogiUser()
     {
         $user = new User();
         $user->name = 'Mr Robot';
