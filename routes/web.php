@@ -4,18 +4,17 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\RegistrationController;
+<<<<<<< HEAD
 use App\Http\Controllers\LoginController1;
 
+=======
+>>>>>>> d90808a55cd44c227d7e3540b2eb376a342a1083
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\MoviesController;
 
 // Movies
 Route::get('/', [MoviesController::class, 'index'])->name('index');
-Route::post('movies/{id}', [MoviesController::class, 'show'])->name('index');
-
-//Search function
-Route::get('movies/{id}', 'MoviesController@show')->name('movies.show');
-//Route::get('/', 'MoviesController@index')->name('movies.index');
+Route::get('movies/{id}', [MoviesController::class, 'show'])->name('movie');
 
 
 Route::get('login', function () {
