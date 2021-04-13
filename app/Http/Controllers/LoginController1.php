@@ -22,13 +22,11 @@ class LoginController1 extends Controller
     public function store(Request $request)
     {
         $credentials = $request->only('email', 'password');
-
-        dd($credentials);
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->intended('/');
         }
 
-        return back()->withErrors('Wrong email/password combination');
+        return back()->withErrors('Wrong email or password');
     }
 }
