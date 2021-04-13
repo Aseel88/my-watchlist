@@ -12,7 +12,6 @@ use Tests\TestCase;
 
 class RegistrationTest extends TestCase
 {
-
     /**
      * A basic feature test example.
      *

@@ -10,7 +10,6 @@ use Tests\TestCase;
 
 class MovieTest extends TestCase
 {
-
     /**
      * A basic feature test example.
      *

@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController1 extends Controller
 {
-
     public function __construct()
     {
         $this->middleware(['guest']);
