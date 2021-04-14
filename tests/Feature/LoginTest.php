@@ -24,7 +24,7 @@ class LoginTest extends TestCase
         $response->assertSeeText('Email');
         $response->assertStatus(200);
     }
-    public function testLogiUser()
+    public function testLoginUser()
     {
         $user = new User();
         $user->name = 'Mr Robot';

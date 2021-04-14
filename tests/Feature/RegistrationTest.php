@@ -12,6 +12,7 @@ use Tests\TestCase;
 
 class RegistrationTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      * A basic feature test example.
      *
@@ -32,10 +33,5 @@ class RegistrationTest extends TestCase
         $user->save();
 
         $this->assertDatabaseHas('users', ['email' => 'example@yrgo.se']);
-
-        // $user = User::factory()->create();
-        // $user->save();
-        // $this->assertDatabaseHas('users', ['email' => 'example@yrgo.se']);
-        // $this->assertDatabaseHas('users', ['email' => $user->email, "password" => $user->password]);
     }
 }

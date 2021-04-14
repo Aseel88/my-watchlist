@@ -4,56 +4,44 @@ namespace Tests\Feature;
 
 use GuzzleHttp\Psr7\Uri;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\WithFaker;
 use Mockery\Generator\Parameter;
 use Illuminate\Testing\Fluent\AssertableJson;
+
+
 use Tests\TestCase;
 
 class MovieTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      * A basic feature test example.
      *
      * @return void
      */
-    public function testMovie()
+
+    public function testAllRoutes()
     {
-        $response = $this->get('/');
-        $response->assertStatus(200);
+        $urls = [
+            '/',
+            '/login',
+            '/signup',
+        ];
+
+        foreach ($urls as $url) {
+            $response = $this->get($url);
+            if ($response->assertStatus(200)) {
+                $this->assertTrue(true);
+            } else {
+                $this->assertTrue(false);
+            }
+        }
     }
-
-    public function test_fluent_json()
+    public function testIndexMovie()
     {
-        $response = $this->json('GET', '/movies');
-
+        $response = $this->json('GET', '/');
         $response
-            ->assertJson(
-                fn (AssertableJson $json) =>
-                $json->where('id', 1)
-                    ->where('name', 'Godzilla')
-                    ->etc()
-            );
+            ->assertStatus(200);
     }
-
-    // public function testIndexMovie()
-    // {
-    // test_making_an_api_request
-
-    // $response = $this->getJson('/api/movies');
-
-    // $response
-    //     ->assertStatus(201)
-    //     ->assertJson([
-    //         'created' => true,
-    //     ]);
-    // $this->assertTrue($response['created']);
-    // $response = $this->get(route('index'));
-
-    // $response->assertJson([
-    //     'popularMovies' => $this->popularMovies,
-    //     'genres' => $this->genres,
-    //     // 'id' => $this->id
-    // ]);
-    // }
 }
-// [Route: index] [URI: movies/{id}] [Missing parameter: id].
