@@ -1,4 +1,41 @@
 # My Watch List
+<img src="https://media0.giphy.com/media/VxbP9tLeKzazm/giphy.gif?cid=ecf05e47ipcjrvsipynxc067j8rvc566yblh6q46qjhccq0x&rid=giphy.gif&ct=g" width= "100%">
+
+## About the application:
+
+- My Watch List is a school project, to improve our experiences in backend applications.
+
+## To reach the application:
+
+-   Make sure you have previously installed PHP, Composer and NPM
+-   Clone this repo on your computer
+-   Install dependendcies
+```
+composer install
+npm install
+```
+-   Copy the `.env` file
+```
+cp .env.example .env
+```
+-   Generate an App Key
+```
+php artisan key:generate
+```
+-   Add your database credentials to the `.env` file
+
+```
+php artisan migrate
+```
+-   Get a server running
+```
+php artisan serve
+```
+## Made by:
+
+-   [Aseel Mohamad](https://github.com/Aseel88)
+-   [Agnes Binett](https://github.com/aagneess)
+
 
 ## Code Review
 
