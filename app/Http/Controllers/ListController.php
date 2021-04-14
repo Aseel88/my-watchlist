@@ -19,7 +19,6 @@ class ListController extends Controller
 
     public function __invoke(Request $request)
     {
-
         $user = Auth::user();
 
         return view('your-list', [
