@@ -1,62 +1,33 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# My Watch List
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Code Review
 
-## About Laravel
+By:
+- [Dante Mogrim](https://github.com/mogrim-91)
+- [Erik White](https://github.com/nausea87)
+- [Sandra Danielsson](https://github.com/San-Dan)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. When registering as a new user it'll complain about 'only letters and numbers allowed' when trying to add ones last name. Info on being first name specific would be good.
+2. Search function reroutes to a 404 page if one is quick and presses 'enter/return' before seeing a possible match.
+3. **your-list.blade.php:** Same movie can be added to watchlist multiple times. Would be cool with a function for this and a message telling the user that the movie already is in the list.
+4. A descriptive `README.md` file on the root of your repo would be good.
+5. User-friendliness: Button for "back" etc would be good. Currently need to go back in browser.
+6. **movie.blade.php:** When clicking on the movies, one expects to get extended information but currently the rerouting serves no purpose when the information is identical to the one already on the main page. 
+7. Ability to either delete movies or check them as Seen when you have watched them
+8. No test for logging out route.
+9. You could add something like  `'password-verify' => ['required', 'string', 'same:password']` in your reg-controller and then a verify in your blade to verify in a simple way.
+10. Overall, more messages on the site, informing the user what is happening would be good. Ex "Movie added to list", "You successfully logged out".
+11. **DB:** A few tables are not in use and empty.
+12. **login.blade.php:** `@extends('errors')` missing.
+13. **welcome.blade.php:** - Laravel's built in welcome page not necessary to keep. 
+14. **your-list.blade:** Remove movie from list would be cool!
+15. **RegistrationTest.php L:6-10:** A few passive links there that aren't put to use.
+16. A website title and description on the home page is missing.
+17. **dashboard.blade.php:** File doesn't ever seem to be put into use.
+18. **img:** Alt description missing from the main page's movie posters.
+19. Remember to remove comments (test files, User model etc.).
+20. The site is bleeding to the sides.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+> "All in all, excellent work! Fun idea! I really like it Great job!" :smile: */ Dante* <br><br>
+> "Good job! Some improvements here and there but overall I like the looks of things. Nice use of the API. Awesome with search functions!" :thumbsup: */ Erik* <br><br>
+> "Cool stuff: search while typing and using api!" */ Sandra*
