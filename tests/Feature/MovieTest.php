@@ -6,6 +6,7 @@ use GuzzleHttp\Psr7\Uri;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Mockery\Generator\Parameter;
+use Illuminate\Testing\Fluent\AssertableJson;
 use Tests\TestCase;
 
 class MovieTest extends TestCase
@@ -21,15 +22,38 @@ class MovieTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function testIndexMovie()
+    public function test_fluent_json()
     {
-        $response = $this->get(route('index'));
+        $response = $this->json('GET', '/movies');
 
-        $response->assertJson([
-            'popularMovies' => $this->popularMovies,
-            'genres' => $this->genres,
-            // 'id' => $this->id
-        ]);
+        $response
+            ->assertJson(
+                fn (AssertableJson $json) =>
+                $json->where('id', 1)
+                    ->where('name', 'Godzilla')
+                    ->etc()
+            );
     }
+
+    // public function testIndexMovie()
+    // {
+    // test_making_an_api_request
+
+    // $response = $this->getJson('/api/movies');
+
+    // $response
+    //     ->assertStatus(201)
+    //     ->assertJson([
+    //         'created' => true,
+    //     ]);
+    // $this->assertTrue($response['created']);
+    // $response = $this->get(route('index'));
+
+    // $response->assertJson([
+    //     'popularMovies' => $this->popularMovies,
+    //     'genres' => $this->genres,
+    //     // 'id' => $this->id
+    // ]);
+    // }
 }
 // [Route: index] [URI: movies/{id}] [Missing parameter: id].

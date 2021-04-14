@@ -31,7 +31,11 @@ class RegistrationTest extends TestCase
         $user->password = Hash::make('1235678');
         $user->save();
 
-        $response = $this
-            ->assertDatabaseHas('users', ['email' => 'example@yrgo.se']);
+        $this->assertDatabaseHas('users', ['email' => 'example@yrgo.se']);
+
+        // $user = User::factory()->create();
+        // $user->save();
+        // $this->assertDatabaseHas('users', ['email' => 'example@yrgo.se']);
+        // $this->assertDatabaseHas('users', ['email' => $user->email, "password" => $user->password]);
     }
 }

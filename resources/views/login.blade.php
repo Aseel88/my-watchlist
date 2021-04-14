@@ -1,4 +1,3 @@
-@include('errors')
 @extends('layout.main')
 @section('content')
 <div style="margin-top: 10%" class="container">
