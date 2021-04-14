@@ -6,6 +6,7 @@ use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\LoginController1;
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\MoviesController;
+use App\Http\Controllers\AddMovieController;
 
 // Movies
 Route::get('/', [MoviesController::class, 'index'])->name('index');
@@ -25,4 +26,6 @@ Route::get('/signup', [RegistrationController::class, 'index'])->name('signup');
 Route::post('/signup', [RegistrationController::class, 'store']);
 
 // List
-Route::get('your-list', ListController::class);
+Route::post('movies/{id}', AddMovieController::class)->middleware('auth');
+Route::delete('movies/{id}', AddMovieController::class)->middleware('auth');
+Route::get('your-list', ListController::class)->middleware('auth');
